@@ -23,7 +23,7 @@ const Header = ({ handleToggleSidebar }) => {
             <div className="header__icons">
                 <MdNotifications size={28} />
                 <MdApps size={28} />
-                <img src="https://cdn-icons-png.flaticon.com/512/2202/2202112.png" alt="Avatar" />
+                <img src="https://lh3.googleusercontent.com/a/AGNmyxbY8YqlLBbFNpXsftgDKeCXVa86Stw1gOr3niz0pA=s96-c" alt="Avatar" />
             </div>
         </div>
     )
