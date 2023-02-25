@@ -18,7 +18,7 @@ const Video = () => {
             </div>
 
             <div className="video__channel">
-                <img src="https://yt3.ggpht.com/ytc/AL5GRJXoWnTXp_oljCbsD07kYmc6Vktj3J0Vs64ALooxgA=s68-c-k-c0x00ffffff-no-rj" alt="Channel image" />
+                <img src="https://yt3.ggpht.com/ytc/AL5GRJXoWnTXp_oljCbsD07kYmc6Vktj3J0Vs64ALooxgA=s68-c-k-c0x00ffffff-no-rj" alt="Channel" />
                 <p>Rainbow Hat junior</p>
             </div>
         </div>

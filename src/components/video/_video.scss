@@ -29,6 +29,10 @@
   &__title{
     margin-bottom: 0.1rem;
     color: #fff;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
   &__details{
     display: flex;
