@@ -1,15 +1,50 @@
 import firebase from 'firebase/app'
 
 import auth from '../../firebase'
+import { LOAD_PROFILE, LOGIN_FAIL, LOGIN_OUT, LOGIN_REQUEST, LOGIN_SUCCESS } from '../actionType'
 
 export const login = () => async dispatch => {
     try {
+        dispatch({
+            type: LOGIN_REQUEST,
+        })
         const provider = new firebase.auth.GoogleAuthProvider()
         const res = await auth.signInWithPopup(provider)
-        console.log(res)
+        // console.log(res)
+        const accessToken = res.credential.accessToken
+        const profile = {
+            name: res.additionalUserInfo.profile.name,
+            photoUrl: res.additionalUserInfo.profile.picture,
+        }
+        sessionStorage.setItem("ytc-access-token", accessToken)
+        sessionStorage.setItem("ytc-user", JSON.stringify(profile))
 
+
+        // console.log(profile.name);
+        dispatch({
+            type: LOGIN_SUCCESS,
+            payload: accessToken,
+        })
+        dispatch({
+            type: LOAD_PROFILE,
+            payload: profile,
+        })
     }
     catch (error) {
-        console.log(error)
+        // console.log(error.message)
+        dispatch({
+            type: LOGIN_FAIL,
+            payload: error.message,
+        })
     }
+}
+
+export const log_out = ()=> async dispatch=>{
+    await auth.signOut()
+    dispatch({
+        type:LOGIN_OUT,
+    })
+
+    sessionStorage.removeItem('ytc-access-token')
+    sessionStorage.removeItem('ytc-user')
 }

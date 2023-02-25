@@ -10,7 +10,7 @@ const Video = () => {
                 <span>05:06</span>
             </div>
             <div className="video__title">
-                Create a website in 10 minutes using frameworks
+                Create a website in 5 minutes using frameworks
             </div>
             <div className="video__details">
                 <span> <AiFillEye /> 5m Views •</span>
@@ -19,7 +19,7 @@ const Video = () => {
 
             <div className="video__channel">
                 <img src="https://yt3.ggpht.com/ytc/AL5GRJXoWnTXp_oljCbsD07kYmc6Vktj3J0Vs64ALooxgA=s68-c-k-c0x00ffffff-no-rj" alt="Channel" />
-                <p>Rainbow Hat junior</p>
+                <p>Clever Programmer</p>
             </div>
         </div>
     )
